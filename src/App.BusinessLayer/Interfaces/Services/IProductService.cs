@@ -2,7 +2,7 @@
 
 namespace App.BusinessLayer.Interfaces.Services
 {
-    public interface IProductService
+    public interface IProductService : IDisposable
     {
         Task Add(Product product);
         Task Update(Product product);
