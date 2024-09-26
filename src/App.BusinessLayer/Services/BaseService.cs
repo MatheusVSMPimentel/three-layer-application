@@ -26,7 +26,7 @@ namespace App.BusinessLayer.Services
             _notifier.Handle(message);
         }
 
-        protected bool ExecValidator<TValidator, TEntity>(TValidator validator, TEntity entity) 
+        protected static bool ExecValidator<TValidator, TEntity>(TValidator validator, TEntity entity) 
             where TValidator : AbstractValidator<TEntity> 
             where TEntity : Entity
         {
