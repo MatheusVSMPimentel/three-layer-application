@@ -10,7 +10,7 @@ namespace App.BusinessLayer.Interfaces.Repositories
         Task<IEnumerable<TEntity>> GetAll();
         Task<IEnumerable<TEntity>> SearchFunction(Expression<Func<TEntity, bool>> predicate);
         Task Update(TEntity entity);
-        Task Delete(TEntity entity);
+        Task Delete(Guid id);
         Task<int> SaveChanges();
     }
 }

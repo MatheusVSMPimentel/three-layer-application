@@ -10,5 +10,6 @@ namespace App.BusinessLayer.Entities
         public bool Active { get; set; }
         public SupplierType SupplierType { get; set; }
         public Address? Address { get; set; }
+        public ICollection<Product>? Products { get; set; }
     }
 }

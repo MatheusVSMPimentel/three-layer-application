@@ -13,5 +13,7 @@ namespace App.BusinessLayer.Entities
         public decimal Value { get; set; }
         public DateTime RegisterDate { get; set; }
         public bool Active { get; set; }
+        public Guid SupplierId { get; set; }
+        public Supplier Supplier { get; set; }
     }
 }
