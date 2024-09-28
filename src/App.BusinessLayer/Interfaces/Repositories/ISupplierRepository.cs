@@ -9,9 +9,9 @@ namespace App.BusinessLayer.Interfaces.Repositories
 {
     public interface ISupplierRepository : IRepository<Supplier>
     {
-        Task<Supplier> GetSupllierAndAdress(Guid supplierId);
-        Task<Supplier> GetSupllierProductsAndAdress(Guid supplierId);
-        Task<Address> GetSupplierAddress(Guid supplierId);
+        Task<Supplier?> GetSupllierAndAdress(Guid supplierId);
+        Task<Supplier?> GetSupllierProductsAndAdress(Guid supplierId);
+        Task<Address?> GetSupplierAddress(Guid supplierId);
         Task RemoveSupplierAddress(Address address);
     }
 }
