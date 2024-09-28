@@ -15,6 +15,7 @@ namespace App.BusinessLayer.Entities
         public string? Neighborhood { get; set; }
         public string? City { get; set; }
         public string? State { get; set; }
+        public Guid SupplierId { get; set; }
         public Supplier Supplier { get; set; }
     }
 }
