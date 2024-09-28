@@ -6,6 +6,6 @@ namespace App.BusinessLayer.Interfaces.Repositories
     {
         Task<IEnumerable<Product>> GetProductsBySupplier(Guid supplierId);
         Task<IEnumerable<Product>> GetAllProductsSupplier();
-        Task<Product> GetProductBySupplier(Guid productId);
+        Task<Product?> GetProductSupplierById(Guid productId);
     }
 }
