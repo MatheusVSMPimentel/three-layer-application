@@ -2,11 +2,6 @@
 using App.BusinessLayer.Notifications;
 using FluentValidation;
 using FluentValidation.Results;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace App.BusinessLayer.Services
 {
@@ -26,12 +21,13 @@ namespace App.BusinessLayer.Services
             _notifier.Handle(message);
         }
 
-        protected static bool ExecValidator<TValidator, TEntity>(TValidator validator, TEntity entity) 
+        protected bool ExecValidator<TValidator, TEntity>(TValidator validator, TEntity entity) 
             where TValidator : AbstractValidator<TEntity> 
             where TEntity : Entity
         {
             var validatorResult = validator.Validate(entity);
-           
+            if (!validatorResult.IsValid) Notify(validatorResult);
+
             return validatorResult.IsValid;
         }
     }
