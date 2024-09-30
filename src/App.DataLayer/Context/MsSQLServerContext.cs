@@ -41,7 +41,10 @@ namespace App.DataLayer.Context
             {
                 if(entry.State == EntityState.Added)
                 {
-                    entry.Property(nameof(Product.RegisterDate)).CurrentValue = DateTime.UtcNow;
+                    if(entry.Entity.GetType() == typeof(Product))
+                    {
+                        entry.Property(nameof(Product.RegisterDate)).CurrentValue = DateTime.UtcNow;
+                    }
                     entry.Property(nameof(Entity.CreatedAt)).CurrentValue = DateTime.UtcNow;
                     entry.Property(nameof(Entity.UpdateAt)).CurrentValue = DateTime.UtcNow;
                 }
