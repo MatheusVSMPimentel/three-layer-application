@@ -28,6 +28,7 @@ namespace App.DataLayer.Repositories
 
         public virtual async Task Add(TEntity entity)
         {
+            entity = entity.Id == Guid.Empty ? entity with { Id = Guid.NewGuid() } : entity;
             DbSet.Add(entity);
             await SaveChanges();
         }
